@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home</title>
+    </head>
+    <body>
+        <form action="/blog/{{blog.id}}/edit" method="PosT">
+            {% csrf_token %}    
+            <input class="form-control" type="text" placeholder="title" name="title" value="{{blog.title}}" ><br>
+            <input class="form-control" type="text" name="description" placeholder="description" value="{{blog.description}}"><br>
+    
+            <input type="submit"><br>
+            
+        </form>
+    </body>
+</html> 

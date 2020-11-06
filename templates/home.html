@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home</title>
+    </head>
+    <body>
+        <ul>
+            <li><a href={{request.get_full_path}}>Home</a></li>
+            <li><a href="/blog/profile">Profile</a></li>
+            <li><a href="/blog/addblogs">Add Blog</a></li>
+            <li><a href="/signout">Signout</a></li>
+            <li>Hello, {{user}}</li>
+        </ul>
+        {% for blog in blogs %}
+
+			<p>{{blog.title}}</p>
+			<p>{{blog.description}}</p>
+            <p>By {{blog.username}}</p>
+            <li><a href="/blog/{{blog.id}}"> read more </a></li>
+		{% endfor %}
+
+    </body>
+</html> 
