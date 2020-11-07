@@ -41,9 +41,9 @@ def addblogs(request):
 def blogPage(request,id):
     if 'user' not in request.session:
         return redirect('/')
-
+    username=request.session['user']
     blog=Blog.objects.get(id=id)
-    return render(request,'BlogPage.html',{ 'blog': blog })
+    return render(request,'BlogPage.html',{ 'blog': blog , 'user':username })
 
 def editBlog(request,id):
     if 'user' not in request.session:

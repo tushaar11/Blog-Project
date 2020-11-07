@@ -8,12 +8,16 @@
 			<p>{{blog.title}}</p>
 			<p>{{blog.description}}</p>
             <p>By {{blog.username}}</p> 
-
+            
+            {% if user == blog.username %}
             <p><a href="edit"> edit </a></p>
 
             <form id="delete-form" action="/blog/{{blog.id}}/delete" method="POST">
                 {% csrf_token %}  
                 <button >DELETE</button>
             </form>
+            {% endif %}
+
+            <!-- show edit/delete only if current user is same as the user which posted the blog -->
     </body>
 </html> 
